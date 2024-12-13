@@ -1,3 +1,5 @@
+'use client'
+
 import Head from "next/head";
 import { createPost } from "~/server/db";
 // import { db } from "~/server/db";
@@ -38,7 +40,7 @@ export default function Home() {
           await createPost()
         }}>Create row</button>
         <div className="flex flex-wrap gap-10">
-          {[...mockImages, ...mockImages, ...mockImages].map((image) => (
+          {mockImages.map((image) => (
             <div key={image.id} className="w-1/5 p-4">
               <img src={image.url} alt="image" />
             </div>
